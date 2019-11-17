@@ -1,0 +1,18 @@
+{
+  "npmScope": "practica-final",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "geographic-regions-e2e": {
+      "tags": []
+    },
+    "geographic-regions": {
+      "tags": []
+    }
+  }
+}
