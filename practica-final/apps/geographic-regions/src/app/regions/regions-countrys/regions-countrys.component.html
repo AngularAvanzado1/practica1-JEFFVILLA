@@ -1,0 +1,16 @@
+<div fxLayaout="row">
+  <h3>Countrys of region</h3>
+</div>
+<mat-nav-list>
+  <cdk-virtual-scroll-viewport style="height: 500px" itemSize="90">
+    <ng-container *ngFor="let country of countrys; last as last">
+
+      <mat-list-item [routerLink]="['/countrys', country.id]" routerLinkActive="router-link-active">
+        {{ country ? country.name : '' }}
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </mat-list-item>
+
+
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</mat-nav-list>

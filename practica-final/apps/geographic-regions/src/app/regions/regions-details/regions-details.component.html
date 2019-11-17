@@ -1,0 +1,20 @@
+<div *ngIf="region !== undefined; else loading">
+
+  <ng-container *ngIf="region !== null; else noRegion">
+    <div>
+      <h3>Details of region</h3>
+    </div>
+    <mat-list>
+      <mat-list-item><strong>Name:</strong> {{ region.name}}</mat-list-item>
+      <mat-list-item> <strong>Code:</strong> {{ region.code}}</mat-list-item>
+      <mat-list-item> <strong>IsoCode:</strong> {{ region.iso2code}}</mat-list-item>
+    </mat-list>
+
+  </ng-container>
+  <ng-template #noRegion>
+    <small>No project</small>
+  </ng-template>
+</div>
+<ng-template #loading>
+  <small>Loading ...</small>
+</ng-template>

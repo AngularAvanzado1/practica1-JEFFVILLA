@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h3>Country Details</h3>
+</div>
+<div fxLayout="row" fxLayoutGap="20px" *ngIf="country$ | async as country else loading">
+
+  <div fxLayout="column" fxLayoutGap="30px">
+    <div>
+      <strong>Name:</strong> {{country.name}}
+    </div>
+    <div>
+      <strong>Id:</strong> {{country.id}}
+    </div>
+    <div>
+      <strong> Iso2Code:</strong> {{country.iso2Code}}
+    </div>
+    <div>
+      <strong>Capital City:</strong> {{country.capitalCity}}
+    </div>
+    <div>
+      <strong>Income Level:</strong> {{country.incomeLevel.value}}
+    </div>
+    <div>
+      <strong> Lending Type:</strong> {{country.lendingType.value}}
+
+    </div>
+    <div>
+      <strong>Longitude:</strong> {{country.longitude}}
+
+    </div>
+    <div>
+      <strong>Latitude:</strong> {{country.latitude}}
+
+    </div>
+    <div>
+      <strong>Region:</strong> {{country.region.id}}
+    </div>
+    <div fxLayaout=" row" style="margin: 20px;">
+      <button mat-raised-button color="warn" [routerLink]="['/regions',country.region?.id]">
+        Return
+      </button>
+    </div>
+  </div>
+
+
+</div>
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>

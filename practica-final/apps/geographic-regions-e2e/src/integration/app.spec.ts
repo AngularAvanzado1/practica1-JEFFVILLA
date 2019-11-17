@@ -1,9 +1,13 @@
-import { getGreeting } from '../support/app.po';
+import { getGreeting, obtainRegionCountry } from '../support/app.po';
 
-describe('geographic-regions', () => {
-  beforeEach(() => cy.visit('/'));
-
-  it('should display welcome message', () => {
-    getGreeting().contains('Welcome to geographic-regions!');
+describe('WHEN: geographic-regions', () => {
+  beforeEach(() => cy.visit('/regions/:id'));
+  context('WHEN: user visits Region Page', () => {
+    it('THEN: should display regions', () => {
+      obtainRegionCountry().contains('regions-countrys', 'Details Country');
+    });
+    it('should display welcome message', () => {
+      getGreeting().contains('Welcome to geographic-regions!');
+    });
   });
 });

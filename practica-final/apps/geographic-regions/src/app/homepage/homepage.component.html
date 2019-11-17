@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <ng-container *ngFor="let region of regions$ | async; last as last">
+    <mat-list-item [routerLink]="['/regions', region.code]" routerLinkActive="router-link-active">
+      {{ region ? region.name : '' }}
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </mat-list-item>
+  </ng-container>
+</mat-nav-list>

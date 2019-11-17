@@ -5,13 +5,46 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@practica-final/layout';
+import { MaterialModule } from '@practica-final/material';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([{ path: 'regions', loadChildren: () => import('./regions/regions.module').then(m => m.RegionsModule) }], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          redirectTo: 'homepage',
+          pathMatch: 'full'
+        },
+        {
+          path: 'regions/:id',
+          loadChildren: () =>
+            import('./regions/regions.module').then(m => m.RegionsModule)
+        },
+        {
+          path: 'regions',
+          loadChildren: () =>
+            import('./regions/regions.module').then(m => m.RegionsModule)
+        },
+        {
+          path: 'countrys/:id',
+          loadChildren: () =>
+            import('./countrys/countrys.module').then(m => m.CountrysModule)
+        },
+        {
+          path: 'homepage',
+          loadChildren: () =>
+            import('./homepage/homepage.module').then(m => m.HomepageModule)
+        }
+      ],
+      { initialNavigation: 'enabled' }
+    ),
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

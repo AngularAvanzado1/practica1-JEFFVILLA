@@ -1,1 +1,10 @@
-<p>regions works!</p>
+<div fxLayaout="row" style="margin: 20px;">
+  <regions-details [region]="region$ | async" fxFlex="50%"></regions-details>
+  <regions-countrys [countrys]="countrys$ | async" fxFlex></regions-countrys>
+</div>
+
+<div fxLayaout="row" style="margin: 20px;">
+  <button mat-raised-button color="warn" [routerLink]="['/homepage']">
+    Return
+  </button>
+</div>

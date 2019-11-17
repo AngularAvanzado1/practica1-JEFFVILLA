@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RegionService } from './region.service';
+import { Observable } from 'rxjs';
 
-describe('RegionService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+describe('GIVE: A RegionService', () => {
+  let regionService: RegionService;
+  beforeEach(() =>
+    TestBed.configureTestingModule({ imports: [HttpClientTestingModule] })
+  );
 
-  it('should be created', () => {
-    const service: RegionService = TestBed.get(RegionService);
-    expect(service).toBeTruthy();
+  it('THEN: should be created', () => {
+    expect(regionService).toBeTruthy();
+  });
+
+  it('THEN: should return array of Region Model in a observable', () => {
+    expect(regionService.getAllRegions()).toBeInstanceOf(Observable);
   });
 });
