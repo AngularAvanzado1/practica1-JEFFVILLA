@@ -13,6 +13,18 @@
     },
     "geographic-regions": {
       "tags": []
+    },
+    "shared-domain": {
+      "tags": []
+    },
+    "shared-data": {
+      "tags": []
+    },
+    "material": {
+      "tags": []
+    },
+    "layout": {
+      "tags": []
     }
   }
 }
